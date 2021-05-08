@@ -31,5 +31,30 @@ namespace EasyPlan.Controllers
 
             return View();
         }
+        public ActionResult Mision()
+        {
+
+            return View();
+        }
+        public ActionResult Vision()
+        {
+
+            return View();
+        }
+        public ActionResult Objetives()
+        {
+
+            return View();
+        }
+        public ActionResult Projection()
+        {
+
+            return View();
+        }
+        public ActionResult Values()
+        {
+
+            return View();
+        }
     }
 }
