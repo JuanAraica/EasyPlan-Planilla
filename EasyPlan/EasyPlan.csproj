@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,9 +128,52 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdelantosController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\HistorialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JornadaController.cs" />
+    <Compile Include="Controllers\PrestamosController.cs" />
+    <Compile Include="Controllers\SalarioController.cs" />
+    <Compile Include="Controllers\TrabajadorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Easy.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Easy.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Easy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Easy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Easy.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Adelantos.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Clientes.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Historial.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Jornada.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Prestamos.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Salario.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Trabajador.cs">
+      <DependentUpon>Easy.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,14 +182,32 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSSDemo.css" />
     <Content Include="Content\logo.jpg" />
     <Content Include="Content\MeCSS.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Easy.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Easy.Context.cs</LastGenOutput>
+      <DependentUpon>Easy.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Easy.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Easy.edmx</DependentUpon>
+      <LastGenOutput>Easy.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Easy.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Easy.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Easy.edmx.diagram">
+      <DependentUpon>Easy.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -149,6 +218,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MiJS.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -170,10 +240,47 @@
     <Content Include="Views\Home\Objetives.cshtml" />
     <Content Include="Views\Home\Projection.cshtml" />
     <Content Include="Views\Home\Values.cshtml" />
+    <Content Include="Views\Trabajador\Create.cshtml" />
+    <Content Include="Views\Trabajador\Delete.cshtml" />
+    <Content Include="Views\Trabajador\Details.cshtml" />
+    <Content Include="Views\Trabajador\Edit.cshtml" />
+    <Content Include="Views\Trabajador\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Jornada\Create.cshtml" />
+    <Content Include="Views\Jornada\Delete.cshtml" />
+    <Content Include="Views\Jornada\Details.cshtml" />
+    <Content Include="Views\Jornada\Edit.cshtml" />
+    <Content Include="Views\Jornada\Index.cshtml" />
+    <Content Include="Views\Prestamos\Create.cshtml" />
+    <Content Include="Views\Prestamos\Delete.cshtml" />
+    <Content Include="Views\Prestamos\Details.cshtml" />
+    <Content Include="Views\Prestamos\Edit.cshtml" />
+    <Content Include="Views\Prestamos\Index.cshtml" />
+    <Content Include="Views\Salario\Create.cshtml" />
+    <Content Include="Views\Salario\Delete.cshtml" />
+    <Content Include="Views\Salario\Details.cshtml" />
+    <Content Include="Views\Salario\Edit.cshtml" />
+    <Content Include="Views\Salario\Index.cshtml" />
+    <Content Include="Views\Adelantos\Create.cshtml" />
+    <Content Include="Views\Adelantos\Delete.cshtml" />
+    <Content Include="Views\Adelantos\Details.cshtml" />
+    <Content Include="Views\Adelantos\Edit.cshtml" />
+    <Content Include="Views\Adelantos\Index.cshtml" />
+    <Content Include="Views\Historial\Create.cshtml" />
+    <Content Include="Views\Historial\Delete.cshtml" />
+    <Content Include="Views\Historial\Details.cshtml" />
+    <Content Include="Views\Historial\Edit.cshtml" />
+    <Content Include="Views\Historial\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutDemo.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -187,6 +294,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

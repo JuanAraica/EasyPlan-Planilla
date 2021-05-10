@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EasyPlan.Models.Tbl_Salario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDemo.cshtml";
+}
+ 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalarioBruto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seguro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prestamos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adelantos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Otros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalarioNeto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimeraFecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UltimaFecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalDeducciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaSalario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Trabajador.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioBruto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seguro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prestamos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adelantos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Otros)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioNeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimeraFecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UltimaFecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDeducciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaSalario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Trabajador.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idSalario }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idSalario }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idSalario })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EasyPlan.Models.Tbl_Prestamos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDemo.cshtml";
+}
+
+ 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaPrestamo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmisorPrestamo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Trabajador.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPrestamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmisorPrestamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Trabajador.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idPrestamo }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idPrestamo }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idPrestamo })
+            </td>
+        </tr>
+    }
+
+</table>

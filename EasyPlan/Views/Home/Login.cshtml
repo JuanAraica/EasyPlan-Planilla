@@ -1,0 +1,51 @@
+﻿
+@{ 
+    Layout = "~/Views/Shared/_LayoutComponent.cshtml";
+}
+<style>
+    .modal-content {
+        width: 400px;
+        height: 60px;
+    }
+</style>
+
+<a class="btnLogin" data-toggle="modal" data-target="#modal-sm">Demo</a>
+
+<div id="modal-sm" class="modal fade" data-backdrop="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title text-md">Small Modal</div> <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="login-container">
+                    <div id="output"></div>
+                    <div class="avatar"></div>
+                    <div class="form-box">
+                        <form action="" method="">
+                            <input name="user" type="text" placeholder="username">
+                            <input type="password" placeholder="password">
+                            <button class="btn btn-info btn-block login" type="submit">Login</button>
+
+                            <button>@Html.ActionLink("Enter", "Index", "Trabajador")</button>
+                            
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer"> <button type="button" class="btn btn-light" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button> </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

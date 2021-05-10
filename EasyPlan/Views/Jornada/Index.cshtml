@@ -1,0 +1,154 @@
+﻿@model IEnumerable<EasyPlan.Models.Tbl_Jornada>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDemo.cshtml";
+}
+
+ 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoJornada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioHoraRegular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioHoraExtra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadHorasRegulares)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadHorasExtras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotalHoraExtra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotalHorasRegulares)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioDia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadMedida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioUnidadMedida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotalUnidadMedida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioMetro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioPaquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LaborExtra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioLaborExtra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaJornada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalarioJornada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Trabajador.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoJornada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioHoraRegular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioHoraExtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadHorasRegulares)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadHorasExtras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotalHoraExtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotalHorasRegulares)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioDia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnidadMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotalUnidadMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioMetro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioPaquete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaborExtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioLaborExtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaJornada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioJornada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Trabajador.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idJornada }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idJornada }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idJornada })
+            </td>
+        </tr>
+    }
+
+</table>

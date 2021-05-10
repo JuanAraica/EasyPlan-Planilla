@@ -1,0 +1,50 @@
+﻿@model EasyPlan.Models.Tbl_Prestamos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tbl_Prestamos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPrestamo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPrestamo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmisorPrestamo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmisorPrestamo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Trabajador.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Trabajador.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPrestamo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

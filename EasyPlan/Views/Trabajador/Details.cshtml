@@ -1,0 +1,170 @@
+﻿@model EasyPlan.Models.Tbl_Trabajador
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tbl_Trabajador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEmpleo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEmpleo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDespido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDespido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InicioIncapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InicioIncapacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalIncapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalIncapacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Padecimientos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Padecimientos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CedulaTra }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
