@@ -7,15 +7,18 @@
 
  
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="card text-center">
+
+    <div class="card-body">
+        <img src="~/Content/logo.jpg" />
+        <h5 class="card-title">Historial</h5>
+    </div>
+</div>
+<table class="table table-dark" style="text-align:center">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Registro)
+        <th scope="col">
+            Registro
         </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -23,11 +26,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Registro)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.idRegistro }) |
-                @Html.ActionLink("Details", "Details", new { id = item.idRegistro }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.idRegistro })
             </td>
         </tr>
     }

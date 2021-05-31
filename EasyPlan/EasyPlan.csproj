@@ -182,6 +182,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSSDemo2.css" />
     <Content Include="Content\CSSDemo.css" />
     <Content Include="Content\logo.jpg" />
     <Content Include="Content\MeCSS.css" />
@@ -270,14 +271,13 @@
     <Content Include="Views\Adelantos\Details.cshtml" />
     <Content Include="Views\Adelantos\Edit.cshtml" />
     <Content Include="Views\Adelantos\Index.cshtml" />
-    <Content Include="Views\Historial\Create.cshtml" />
-    <Content Include="Views\Historial\Delete.cshtml" />
     <Content Include="Views\Historial\Details.cshtml" />
-    <Content Include="Views\Historial\Edit.cshtml" />
     <Content Include="Views\Historial\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutDemo.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutComponent.cshtml" />
+    <Content Include="Views\Trabajador\IndexDemo.cshtml" />
+    <Content Include="Views\Shared\_LayoutDemo2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,7 +19,10 @@ namespace EasyPlan.Controllers
         {
             return View(db.Tbl_Trabajador.ToList());
         }
-
+        public ActionResult IndexDemo()
+        {
+            return View(db.Tbl_Trabajador.ToList());
+        }
         // GET: Trabajador/Details/5
         public ActionResult Details(string id)
         {
@@ -34,6 +37,7 @@ namespace EasyPlan.Controllers
             }
             return View(tbl_Trabajador);
         }
+ 
 
         // GET: Trabajador/Create
         public ActionResult Create()
